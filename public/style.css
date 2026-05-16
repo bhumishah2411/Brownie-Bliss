@@ -3559,8 +3559,8 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: var(--gold);
-  color: var(--brown-dark);
+  background: var(--brown-dark);
+  color: var(--cream);
   padding: 14px 36px;
   text-decoration: none;
   font-size: 13px;
@@ -3574,9 +3574,11 @@ nav a:hover {
 }
 
 .hero-cta:hover {
-  background: var(--cream);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background: var(--brown-mid);
+  letter-spacing: 2.5px;
+  gap: 12px;
 }
 
 .hero-visual {
@@ -5804,7 +5806,8 @@ html.dark .btn-primary,
 html.dark .btn-checkout,
 html.dark .btn-whatsapp,
 html.dark .track-container button {
-  color: #FFF9F2 !important;
+  color: var(--brown-dark) !important;
+  background-color: var(--gold) !important;
 }
 
 /* Fix button hover states in dark mode (golden cream colour) */
@@ -5829,7 +5832,12 @@ html.dark .cart-close {
 
 /* Fix hero-cta hover in dark mode */
 html.dark .hero-cta:hover {
-  background-color: var(--gold-light) !important;
+  background-color: var(--gold) !important;
+  color: var(--brown-dark) !important;
+}
+
+html.dark .hero-cta {
+  background-color: var(--gold) !important;
   color: var(--brown-dark) !important;
 }
 
