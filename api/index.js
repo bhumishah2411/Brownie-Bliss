@@ -521,7 +521,6 @@ app.get('/api/orders', adminAuth, async (req, res) => {
       return res.json({ success: true, orders: list });
     }
 
-    const filter = {};
     if (status && status !== 'all') {
       conditions.push({ $or: [{ status }, { payment_status: status }] });
     }
@@ -730,11 +729,13 @@ if (require.main === module) {
   if (!MONGO_URI) {
     console.warn('⚠️  MONGO_URI is not set. Orders and products API run in memory/static mode until you restart the server.');
   }
-  app.listen(PORT, () => {
-    console.log(`🚀 Server running at http://localhost:${PORT}`);
+
+  startServer(Number(PORT));
+}
+
 function startServer(port) {
   const server = app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`🚀 Server running at http://localhost:${port}`);
   });
 
   server.on('error', (err) => {
